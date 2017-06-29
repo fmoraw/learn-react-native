@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NormalText } from '../../index';
 import { View, TextInput } from 'react-native';
 import * as styles from '../../../styles';
 
@@ -17,9 +16,9 @@ export class Form extends Component {
   render() {
     return (
       <View>
-        <NormalText>
+        <Text>
           {this.props.titleText}
-        </NormalText>
+        </Text>
         <TextInput
           multiline={this.props.multiline}
           secureTextEntry={this.props.secureTextEntry}
