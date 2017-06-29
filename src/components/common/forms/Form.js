@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput } from 'react-native';
+import { View, TextInput, Text } from 'react-native';
 import * as styles from '../../../styles';
 
 const customStyle = {
