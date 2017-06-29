@@ -17,6 +17,11 @@ export function receiveLogin(token) {
 export function fetchLogin(username) {
   return (dispatch) => {
     dispatch(requestLogin(username));
-    dispatch(receiveLogin('######TestToken######'));
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        dispatch(receiveLogin('######TestToken######'));
+        resolve();
+      }, 2000);
+    });
   };
 }
