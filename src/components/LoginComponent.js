@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { PrimaryButton, Form } from './common';
+import { PrimaryButton, Form, Card } from './common';
 
 class LoginComponent extends Component {
 
@@ -32,7 +32,7 @@ class LoginComponent extends Component {
 
   render() {
     return (
-      <View>
+      <Card>
         <Form
           titleText={'username'}
           placeholder={'username'}
@@ -44,7 +44,7 @@ class LoginComponent extends Component {
           secureTextEntry
           placeholder={'password'}
         />
-      </View>
+      </Card>
     );
   }
 }
