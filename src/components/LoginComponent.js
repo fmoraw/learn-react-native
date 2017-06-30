@@ -24,10 +24,16 @@ class LoginComponent extends Component {
     alert('Passwort zurücksetzen');
   }
 
-  onChangeUsernameText(username) {
+  onChangeUsernameText(input) {
     this.setState({
-      username: username
+      username: input,
     });
+  }
+
+  onChangePassword(input) {
+    this.setState({
+      password: input,
+    })
   }
 
   render() {
@@ -41,18 +47,20 @@ class LoginComponent extends Component {
         <Form
           titleText={'Username'}
           placeholder={'Username'}
-          onChangeText={() => this.onChangeUsernameText}
+          onChangeText={(event) => this.onChangeUsernameText(event)}
           value={this.state.username}
         />
         <Form
           titleText={'Password'}
           secureTextEntry
           placeholder={'Password'}
+          onChangeText={(event) => this.onChangePassword(event)}
+          value={this.state.password}
         />
         <View style={{ marginTop: 30 }} />
         <PrimaryButton
           title={'Login'}
-          onPress={this.props.login}
+          onPress={() => this.props.login(this.state.username, this.state.password)}
         />
         <View style={{ marginTop: 10 }} />
         <LinkButton

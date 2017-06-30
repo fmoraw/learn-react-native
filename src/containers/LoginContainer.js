@@ -24,7 +24,7 @@ class LoginContainer extends Component {
         isFetching={this.props.isFetching}
         goToRegistrationScreen={() => this.goToRegistrationScreen()}
         goToForgotPasswordScreen={() => this.goToForgotPasswordScreen()}
-        login={() => this.login()}
+        login={(username, password) => this.login(username, password)}
       />
     );
   }
