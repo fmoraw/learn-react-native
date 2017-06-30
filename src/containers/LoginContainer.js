@@ -37,7 +37,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    isFetching: state.loginReducer,
+    //isFetching: state.loginReducer,
   };
 }
 

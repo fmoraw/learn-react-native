@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { PrimaryButton, Form, Card } from './common';
+import { PrimaryButton, Form, Card, LinkButton, Spinner } from './common';
 
 class LoginComponent extends Component {
 
@@ -31,18 +31,39 @@ class LoginComponent extends Component {
   }
 
   render() {
+    if (this.props.isFetching) {
+      return (
+        <Card>
+          <Spinner />
+        </Card>
+      )
+    }
     return (
       <Card>
         <Form
-          titleText={'username'}
-          placeholder={'username'}
+          titleText={'Username'}
+          placeholder={'Username'}
           onChangeText={() => this.onChangeUsernameText}
           value={this.state.username}
         />
         <Form
-          titleText={'password'}
+          titleText={'Password'}
           secureTextEntry
-          placeholder={'password'}
+          placeholder={'Password'}
+        />
+        <View style={{ marginTop: 30 }} />
+        <PrimaryButton
+          title={'Login'}
+          onPress={this.props.login}
+        />
+        <View style={{ marginTop: 10 }} />
+        <LinkButton
+          title={'Register'}
+          onPress={this.props.goToRegistrationScreen}
+        />
+        <LinkButton
+          title={'ForgotPassword'}
+          onPress={this.props.goToForgotPasswordScreen}
         />
       </Card>
     );
