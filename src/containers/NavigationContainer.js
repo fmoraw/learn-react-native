@@ -15,7 +15,7 @@ const customSceneStyle = {
   flex: 1,
   padding: 10,
   justifyContent: 'center',
-  backgroundColor: styles.cardBackground,
+  backgroundColor: styles.colors.primary,
 };
 
 class NavigationContainer extends Component {
