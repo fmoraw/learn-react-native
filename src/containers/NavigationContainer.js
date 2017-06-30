@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+import {Platform} from 'react-native';
 import { Scene, Router, Reducer } from 'react-native-router-flux';
 import LoginContainer from './LoginContainer';
+import MainMenuContainer from './MainMenuContainer';
 import * as styles from '../styles';
 
 const reducerCreate = (params) => {
   const defaultReducer = Reducer(params);
   return (state, action) => defaultReducer(state, action);
+};
+
+const customSceneStyle = {
+  paddingTop: Platform.OS === 'ios' ? 64 : 54,
+  flex: 1,
+  padding: 10,
+  justifyContent: 'center',
+  backgroundColor: styles.cardBackground,
 };
 
 class NavigationContainer extends Component {
@@ -15,6 +25,7 @@ class NavigationContainer extends Component {
         createReducer={reducerCreate}
         navigationBarStyle={{ backgroundColor: styles.colors.secondary }}
         titleStyle={{ color: styles.colors.primary }}
+        sceneStyle={customSceneStyle}
       >
         <Scene key="root">
           <Scene
@@ -26,8 +37,8 @@ class NavigationContainer extends Component {
         <Scene key="main">
           <Scene
             key="start"
-            component={LoginContainer}
-            title="Login"
+            component={MainMenuContainer}
+            title="MainMenu"
           />
         </Scene>
       </Router>

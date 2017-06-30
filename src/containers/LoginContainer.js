@@ -19,7 +19,6 @@ class LoginContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <LoginComponent
         isFetching={this.props.isFetching}

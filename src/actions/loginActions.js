@@ -17,6 +17,8 @@ export function receiveLogin(token) {
 
 export function fetchLogin(username) {
   return (dispatch) => {
+    Actions.main();
+    /*
     dispatch(requestLogin(username));
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -25,5 +27,6 @@ export function fetchLogin(username) {
         resolve();
       }, 2000);
     });
+    */
   };
 }

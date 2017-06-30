@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { PrimaryButton, Form, Card, LinkButton, Spinner } from './common';
+import { PrimaryButton, Form, LinkButton, Spinner } from './common';
 
 class LoginComponent extends Component {
 
@@ -39,7 +39,7 @@ class LoginComponent extends Component {
       )
     }
     return (
-      <Card>
+      <View>
         <Form
           titleText={'Username'}
           placeholder={'Username'}
@@ -65,7 +65,7 @@ class LoginComponent extends Component {
           title={'ForgotPassword'}
           onPress={this.props.goToForgotPasswordScreen}
         />
-      </Card>
+      </View>
     );
   }
 }
