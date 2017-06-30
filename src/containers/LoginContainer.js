@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { ActionCreators } from '../actions';
 import LoginComponent from '../components/LoginComponent';
 
 class LoginContainer extends Component {
@@ -16,14 +19,26 @@ class LoginContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <LoginComponent
-        register={() => this.goToRegistrationScreen}
-        forgotPassword={() => this.goToForgotPasswordScreen}
-        login={() => this.login}
+        isFetching={this.props.isFetching}
+        goToRegistrationScreen={() => this.goToRegistrationScreen()}
+        goToForgotPasswordScreen={() => this.goToForgotPasswordScreen()}
+        login={() => this.login()}
       />
     );
   }
 }
 
-export default LoginContainer;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(ActionCreators, dispatch);
+}
+
+function mapStateToProps(state) {
+  return {
+    isFetching: state.loginReducer,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

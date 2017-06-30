@@ -1,4 +1,5 @@
 import * as types from './types';
+import { Actions } from 'react-native-router-flux';
 
 export function requestLogin(username) {
   return {
@@ -20,6 +21,7 @@ export function fetchLogin(username) {
     return new Promise((resolve) => {
       setTimeout(() => {
         dispatch(receiveLogin('######TestToken######'));
+        alert('loggedIn')
         resolve();
       }, 2000);
     });

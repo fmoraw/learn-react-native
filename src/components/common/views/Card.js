@@ -5,7 +5,10 @@ import * as styles from '../../../styles';
 const customStyle = {
   paddingTop: Platform.OS === 'ios' ? 64 : 54,
   flex: 1,
-}
+  padding: 10,
+  justifyContent: 'center',
+  backgroundColor: styles.cardBackground,
+};
 
 export class Card extends Component {
 
@@ -16,5 +19,4 @@ export class Card extends Component {
       </View>
     );
   }
-
 }

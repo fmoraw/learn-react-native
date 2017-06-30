@@ -13,11 +13,8 @@ export const cardBackground = colors.primary;
 export const fontColor = colors.secondary;
 export const highlightedFontColor = colors.error;
 export const headingFontSize = 20;
-export const fontSize = 15;
+export const fontSize = 12;
 
 //Button styling
 export const primaryButtonColor = colors.error;
-export const primaryButtonFontColor = colors.third;
-
-export const secondaryButtonColor = colors.success;
-export const secondaryButtonFontColor = colors.primary;
+export const primaryButtonFontColor = colors.primary;

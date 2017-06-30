@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
-import {Scene, Router} from 'react-native-router-flux';
+import { Scene, Router, Reducer } from 'react-native-router-flux';
 import LoginContainer from './LoginContainer';
+import * as styles from '../styles';
+
+const reducerCreate = (params) => {
+  const defaultReducer = Reducer(params);
+  return (state, action) => defaultReducer(state, action);
+};
 
 class NavigationContainer extends Component {
   render() {
-    return <Router>
-      <Scene key="root">
-        <Scene key="login" component={LoginContainer} title="Login" />
-        {/*
-        <Scene key="register" component={Register} title="Register"/>
-        <Scene key="home" component={Home}/>
-        */}
-      </Scene>
-    </Router>
+    return (
+      <Router
+        createReducer={reducerCreate}
+        navigationBarStyle={{ backgroundColor: styles.colors.secondary }}
+        titleStyle={{ color: styles.colors.primary }}
+      >
+        <Scene key="root">
+          <Scene
+            key="login"
+            component={LoginContainer}
+            title="Login"
+          />
+        </Scene>
+        <Scene key="main">
+          <Scene
+            key="start"
+            component={LoginContainer}
+            title="Login"
+          />
+        </Scene>
+      </Router>
+    );
   }
 }
 
