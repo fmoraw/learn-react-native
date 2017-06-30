@@ -33,9 +33,7 @@ class LoginComponent extends Component {
   render() {
     if (this.props.isFetching) {
       return (
-        <Card>
           <Spinner />
-        </Card>
       )
     }
     return (

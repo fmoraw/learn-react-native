@@ -17,16 +17,13 @@ export function receiveLogin(token) {
 
 export function fetchLogin(username) {
   return (dispatch) => {
-    Actions.main();
-    /*
     dispatch(requestLogin(username));
     return new Promise((resolve) => {
       setTimeout(() => {
+        Actions.main();
         dispatch(receiveLogin('######TestToken######'));
-        alert('loggedIn')
         resolve();
       }, 2000);
     });
-    */
   };
 }
