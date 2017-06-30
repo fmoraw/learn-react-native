@@ -8,6 +8,7 @@ import NavigationContainer from './src/containers/NavigationContainer';
 
 const style = {
   flex: 1,
+  paddingTop: Platform.OS === 'ios' ? 0 : 24,
 };
 
 function configureStore(initialState) {
