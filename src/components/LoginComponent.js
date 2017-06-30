@@ -16,14 +16,6 @@ class LoginComponent extends Component {
     this.props.fetchLogin(username, password);
   }
 
-  goToRegistrationScreen() {
-    alert('Registrieren');
-  }
-
-  goToForgotPasswordScreen() {
-    alert('Passwort zurücksetzen');
-  }
-
   onChangeUsernameText(input) {
     this.setState({
       username: input,
