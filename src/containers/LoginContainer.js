@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { ActionCreators } from '../actions';
 import LoginComponent from '../components/LoginComponent';
 
@@ -29,6 +30,11 @@ class LoginContainer extends Component {
     );
   }
 }
+
+LoginContainer.propTypes = {
+  fetchLogin: PropTypes.function.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+};
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(ActionCreators, dispatch);
