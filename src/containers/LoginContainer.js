@@ -32,7 +32,7 @@ class LoginContainer extends Component {
 }
 
 LoginContainer.propTypes = {
-  fetchLogin: PropTypes.function.isRequired,
+  fetchLogin: PropTypes.func.isRequired,
   isFetching: PropTypes.bool.isRequired,
 };
 

@@ -6,8 +6,8 @@ const initialState = {
   isLoggedIn: false,
 };
 
-export const loginReducer = createReducer({}, {
-  [types.REQUEST_LOGIN](state) {
+export const loginReducer = createReducer(initialState, {
+  [types.REQUEST_LOGIN]() {
     return Object.assign({}, initialState, {
       isFetching: true,
       isLoggedIn: false,

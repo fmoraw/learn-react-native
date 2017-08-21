@@ -1,5 +1,5 @@
-import * as types from './types';
 import { Actions } from 'react-native-router-flux';
+import * as types from './types';
 
 export function requestLogin() {
   return {

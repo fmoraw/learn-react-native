@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 import { Scene, Router, Reducer } from 'react-native-router-flux';
 import LoginContainer from './LoginContainer';
 import MainMenuContainer from './MainMenuContainer';
